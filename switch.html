@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swich Case Method</title>
+    <style>
+        .text{
+            color: tomato;
+            text-align: center;
+        }
+        .input-box{
+            width: 50%;
+            display: block;
+            margin: 10px auto;
+            height: 150px;
+            border: solid 2px black;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 40PX;
+            
+        }
+
+        .button-all{
+          margin-top: 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+        }
+        .button{
+            margin-left: 25px;
+            background: #000;
+            border-radius: 20px;
+            height: 60px;
+            width: 100px;
+            color: white;
+        }
+        .button:hover{
+            margin-left: 25px;
+            background: #000;
+            border-radius: 20px;
+            height: 59px;
+            width: 99px;
+            color: white;
+            border: solid blue 2px;
+            box-shadow: blue 0px 0px 10px 0px;
+        }
+        .input-box:hover{
+            width: 50%;
+            display: block;
+            margin: 10px auto;
+            height: 150px;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 40PX;
+            border: solid blue 2px;
+            box-shadow: blue 0px 0px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="text">Enter Text</h1>
+        <input type="text"class="input-box" id="input-box"/>
+        <p class="input-box" id="output"></p>
+    <div class="button-all">
+        <button class="button" onclick="casse(`uppercase`)">Upper Case</button>
+        <button class="button" onclick="casse(`lowercas`)">Lower Case</button>
+        <button class="button" onclick="casse(`lettercount`)">Letter count</button>
+        <button class="button" onclick="casse(`Wordcount`)">Word Count</button>
+    </div>
+    </div>
+    <script>
+        function casse(action){
+            const inputElement = document.getElementById("input-box")
+            const resultElement = document.getElementById("output")
+            const inputElvalue = inputElement.value
+            const output = resultElement 
+            switch(action){
+                case `uppercase`:
+                output.innerText = inputElvalue.toUpperCase()
+                break ;
+                case `lowercase`:
+                output.innerText = inputElvalue.toLowerCase()
+                break ;
+                case `lettercount`:
+                output.innerText = `Total letter:${inputElvalue.length}`
+                break ;
+                case `Wordcount`:
+                output.innerText = `Total Word:${inputElvalue.split(" ").length}`
+                break ;
+                
+
+
+            }
+        }
+    </script>
+
+</body>
+</html>
